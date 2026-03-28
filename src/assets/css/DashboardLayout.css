@@ -1,0 +1,33 @@
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Main content area */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* Sidebar is now fully self-contained (fixed on mobile, static on desktop) */
+/* We no longer need the wrapper .dashboard-sidebar, because DashboardSidebar component
+   has its own container and handles its own positioning via CSS. */
+/* The sidebar will be rendered inline, and its CSS will manage desktop/mobile behavior. */
+
+/* Responsive adjustments for main content */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 16px;
+  }
+}

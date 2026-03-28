@@ -1,0 +1,150 @@
+/* ============================================
+   AppLoader.css — Sprint branded screen loader
+   ============================================ */
+
+/* ── Keyframes ────────────────────────────── */
+
+@keyframes loaderFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes rowReveal {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes iconGlow {
+  0%,100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.35)); }
+  50%      { filter: drop-shadow(0 0 22px rgba(255, 215, 0, 0.65)); }
+}
+
+@keyframes wordmarkIn {
+  0%   { opacity: 0; letter-spacing: 0.55em; }
+  100% { opacity: 1; letter-spacing: -0.04em; }
+}
+
+@keyframes taglineIn {
+  0%   { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 0.55; transform: translateY(0); }
+}
+
+@keyframes barFill {
+  0%   { width: 0%;   opacity: 1; }
+  72%  { width: 82%;  opacity: 1; }
+  92%  { width: 97%;  opacity: 1; }
+  100% { width: 100%; opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { left: -80%; }
+  100% { left: 160%; }
+}
+
+/* ── Backdrop ─────────────────────────────── */
+.app-loader {
+  position: fixed;
+  inset: 0;
+  background: #000c1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: loaderFadeIn 0.2s ease both;
+}
+
+/* ── Inner wrapper ────────────────────────── */
+.app-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ── Logo row: icon + text side by side ────── */
+.al-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;                 /* mirrors header .logo gap: 6px + icon margin */
+  margin-bottom: 28px;
+  animation: rowReveal 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s both;
+}
+
+/* ── SVG icon wrapper ─────────────────────── */
+.al-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -2px;        /* mirrors .logo-icon-wrapper margin-right: -4px */
+}
+
+.al-svg {
+  animation: iconGlow 2.4s ease-in-out 0.5s infinite;
+}
+
+/* ── Text group ───────────────────────────── */
+.al-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+/* Wordmark — mirrors .logoText exactly */
+.al-wordmark {
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: 1.92rem;         /* same as header */
+  color: #ffffff;
+  letter-spacing: -0.05em;
+  margin-top: 3px;
+  animation: wordmarkIn 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both;
+}
+
+/* Tagline — mirrors .logoTag exactly */
+.al-tagline {
+  font-size: 0.64rem;         /* same as header */
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.68);
+  letter-spacing: 0.6px;
+  margin-top: 2px;
+  white-space: nowrap;
+  animation: taglineIn 0.5s ease 0.55s both;
+}
+
+/* ── Progress bar ─────────────────────────── */
+.al-bar-track {
+  width: 152px;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.al-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #ffd700;
+  border-radius: 4px;
+  animation: barFill 1.35s cubic-bezier(0.4, 0, 0.2, 1) 0.35s forwards;
+}
+
+/* Shimmer on bar */
+.al-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  animation: shimmer 0.9s ease-in-out 0.6s infinite;
+}

@@ -1,0 +1,117 @@
+/* TrustLayer.css - White Grey + Gold Theme */
+
+.trust-section {
+  background: #f8f9fc;           /* Light white-grey for the whole page */
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+.trust-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 120px;
+  background: linear-gradient(135deg, #f8f9fc 0%, #f1f3f9 100%);
+}
+
+.trust-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.trust-title {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.trust-title .gold-text {
+  color: #ffd700;        /* Your original gold color restored */
+  font-weight: 700;
+}
+
+.trust-desc {
+  max-width: 720px;
+  margin: 0 auto 70px;
+  font-size: 1.25rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Grid */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-bottom: 90px;
+}
+
+.trust-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px 28px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.trust-card:hover {
+  transform: translateY(-12px);
+  border-color: #ffd700;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.trust-icon {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.trust-card:hover .trust-icon {
+  transform: scale(1.12);
+}
+
+.trust-card h3 {
+  color: #1f2937;
+  font-size: 1.35rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.trust-card p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.65;
+}
+
+/* Badges */
+.trust-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.trust-badge-row span {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  color: #d97706;
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.trust-badge-row span:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #b45309;
+  transform: translateY(-2px);
+}

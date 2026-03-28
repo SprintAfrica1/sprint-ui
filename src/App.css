@@ -1,0 +1,96 @@
+:root {
+  /* --- LIGHT MODE (DEFAULT) --- */
+  --bg: #ffffff;
+  --bg-rgb: 255, 255, 255;
+  --text: #4b5563;
+  --text-h: #001f3f;
+  --accent: #ffd700; /* Sprint Yellow */
+  --border: rgba(0, 0, 0, 0.1);
+  --heading: 'Outfit', 'Inter', sans-serif;
+  --body-font: 'Inter', sans-serif;
+  
+  color-scheme: light dark;
+}
+
+/* --- DARK MODE --- */
+/* This triggers if the system is dark OR if [data-theme="dark"] is present */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000c1a; /* Your deep navy */
+    --bg-rgb: 0, 12, 26;
+    --text: #cbd5f5;
+    --text-h: #ffffff;
+    --border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+[data-theme="dark"] {
+  --bg: #000c1a;
+  --bg-rgb: 0, 12, 26;
+  --text: #cbd5f5;
+  --text-h: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- RESET & LAYOUT --- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  overflow-x: hidden; /* Prevents horizontal scroll from 3D animations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* IMPORTANT: Removes the narrow Vite/React default container */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none !important;
+  text-align: left !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- TYPOGRAPHY --- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  color: var(--text-h);
+  margin-top: 0;
+}
+
+/* Custom Selection Color using your accent */
+::selection {
+  background: var(--accent);
+  color: #000c1a; /* Contrast text for the yellow selection */
+}
+
+/* --- UTILITIES --- */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,347 @@
+/* src/assets/css/PickupModal.css */
+
+.pickup-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.pickup-modal-container {
+  background: var(--bg);
+  border-radius: 28px;
+  width: 90%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  animation: slideUp 0.3s ease;
+}
+
+.pickup-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pickup-modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.pickup-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.pickup-modal-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+.pickup-modal-content {
+  padding: 28px;
+}
+
+/* Form styles */
+.pickup-form .form-group {
+  margin-bottom: 20px;
+}
+
+.pickup-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-h);
+}
+
+.pickup-form .form-group input,
+.pickup-form .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.pickup-form .form-group input:focus,
+.pickup-form .form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.pickup-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pickup-form .form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-secondary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Finding rider */
+.finding-rider {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+  animation: spin 1s linear infinite;
+  color: var(--accent);
+}
+
+.spinner svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.finding-rider p {
+  margin: 8px 0;
+  color: var(--text-primary);
+}
+
+.finding-rider .sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Tracking view */
+.tracking-view .rider-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--code-bg);
+  border-radius: 24px;
+  margin-bottom: 24px;
+}
+
+.rider-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.rider-info h4 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.rider-info p {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.rider-info .eta {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.progress-section {
+  margin: 24px 0;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #10b981);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.progress-steps span.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tracking-map {
+  background: var(--code-bg);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  min-height: 180px;
+}
+
+.map-placeholder {
+  position: relative;
+  height: 100px;
+  margin-bottom: 16px;
+}
+
+.pin {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  color: var(--accent);
+  transition: left 0.2s linear;
+  font-size: 28px;
+}
+
+.route-line {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.status-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+
+/* Completed view */
+.completed-view {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.check-circle {
+  width: 64px;
+  height: 64px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+}
+
+.check-circle svg {
+  width: 36px;
+  height: 36px;
+  stroke-width: 2.5;
+}
+
+.completed-view h3 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  color: var(--text-h);
+}
+
+.completed-view p {
+  margin: 8px 0;
+  color: var(--text-primary);
+}
+
+.completed-view .small {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

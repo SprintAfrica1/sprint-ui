@@ -1,0 +1,189 @@
+.tracking-page {
+  width: 100%;
+  padding: 32px 24px 48px;
+}
+
+.tracking-header {
+  margin-bottom: 32px;
+}
+
+.tracking-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.tracking-header p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.tracking-card {
+  background: var(--bg-primary);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.order-summary {
+  margin-bottom: 24px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(255,215,0,0.1);
+  color: var(--accent);
+}
+
+.chat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  padding: 8px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.chat-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.progress-section {
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #10b981);
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.progress-steps span.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Map Container */
+.map-container {
+  margin-bottom: 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Rider Info */
+.rider-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.rider-avatar img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.rider-details h4 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.rider-details p {
+  margin: 2px 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.phone {
+  font-family: monospace;
+  margin-top: 4px;
+}
+
+.tracking-message {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 16px 0 8px;
+  border-top: 1px solid var(--border-light);
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tracking-page {
+    padding: 24px 16px 40px;
+  }
+  .tracking-header h1 {
+    font-size: 1.5rem;
+  }
+  .status-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .chat-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .map-container {
+    height: 300px;
+  }
+  .rider-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .rider-details p {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,201 @@
+/* Header.css — Mature & Professional Sprint Header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 100px;                      /* Fixed height - no shifting */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.header.scrolled,
+.header.solid {
+  height: 82px;                       /* Slightly smaller when scrolled/solid */
+  background: rgba(0, 31, 63, 0.96);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.header.solid {
+  backdrop-filter: none;
+}
+
+/* Container */
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;                       /* Full height of fixed header */
+}
+
+/* ====================== LOGO ====================== */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 180px;                       /* Really big & bold */
+  flex-shrink: 0;
+}
+
+.logo-image {
+  height: 100%;
+  width: auto;
+  max-width: 420px;                   /* Very visible & bold */
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+  transition: all 0.35s ease;
+}
+
+.logo:hover .logo-image {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 20px rgba(255, 215, 0, 0.45));
+}
+
+/* ====================== NAV & CTAs ====================== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.navLink {
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  padding: 10px 19px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.09);
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.ctaLogin {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #fff;
+  padding: 9px 23px;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaLogin:hover {
+  border-color: #ffd700;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.07);
+}
+
+.ctaSignup {
+  font-weight: 700;
+  font-size: 0.94rem;
+  color: #0a1a2f;
+  background: #ffd700;
+  padding: 11px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -6px rgba(255, 215, 0, 0.45);
+  transition: all 0.3s ease;
+}
+
+.ctaSignup:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 32px -8px rgba(255, 215, 0, 0.55);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  margin: 6px 0;
+  border-radius: 3px;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 31, 63, 0.97);
+  backdrop-filter: blur(18px);
+  padding: 32px 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileLink {
+  font-size: 1.22rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 0;
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.mobileLogin,
+.mobileSignup {
+  padding: 15px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .inner { padding: 0 32px; }
+  .nav, .ctas { display: none; }
+  .hamburger { display: block; }
+}
+
+@media (max-width: 640px) {
+  .header,
+  .header.scrolled,
+  .header.solid {
+    height: 78px;
+  }
+  .logo {
+    height: 68px;
+  }
+  .logo-image {
+    max-width: 310px;
+  }
+}

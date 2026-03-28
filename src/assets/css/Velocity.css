@@ -1,0 +1,156 @@
+/* Velocity.css - Modern White-Grey + Gold Theme */
+
+.velocity-section {
+  background: #f8f9fc;           /* Light white-grey background */
+}
+
+.velocity-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.velocity-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 215, 0, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.velocity-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.velocity-title {
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 24px;
+  line-height: 1.1;
+}
+
+.velocity-title .gold-text {
+  color: #ffd700;
+}
+
+.velocity-sub {
+  max-width: 680px;
+  margin: 0 auto 70px;
+  font-size: 1.25rem;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+/* Stats Grid */
+.velocity-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin-bottom: 90px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.stat-card:hover {
+  transform: translateY(-12px);
+  border-color: #ffd700;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.stat-number {
+  display: block;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-desc {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Speed Gauge - Improved & Clearer */
+.speed-gauge {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.gauge-ring {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(#ffd700 0deg 320deg, #e5e7eb 320deg 360deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.gauge-ring::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gauge-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1f2937;
+  z-index: 2;
+}
+
+.gauge-label {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 500;
+  z-index: 2;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .velocity-container {
+    padding: 0 24px;
+  }
+  .velocity-stats-grid {
+    gap: 24px;
+  }
+  .gauge-ring {
+    width: 170px;
+    height: 170px;
+  }
+  .gauge-value {
+    font-size: 2rem;
+  }
+}
