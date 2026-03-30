@@ -14,21 +14,6 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes iconGlow {
-  0%,100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.35)); }
-  50%      { filter: drop-shadow(0 0 22px rgba(255, 215, 0, 0.65)); }
-}
-
-@keyframes wordmarkIn {
-  0%   { opacity: 0; letter-spacing: 0.55em; }
-  100% { opacity: 1; letter-spacing: -0.04em; }
-}
-
-@keyframes taglineIn {
-  0%   { opacity: 0; transform: translateY(4px); }
-  100% { opacity: 0.55; transform: translateY(0); }
-}
-
 @keyframes barFill {
   0%   { width: 0%;   opacity: 1; }
   72%  { width: 82%;  opacity: 1; }
@@ -61,54 +46,26 @@
   gap: 0;
 }
 
-/* ── Logo row: icon + text side by side ────── */
+/* ── Logo row ─────────────────────────────── */
 .al-logo-row {
   display: flex;
   align-items: center;
-  gap: 10px;                 /* mirrors header .logo gap: 6px + icon margin */
-  margin-bottom: 28px;
-  animation: rowReveal 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s both;
-}
-
-/* ── SVG icon wrapper ─────────────────────── */
-.al-icon-wrap {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  margin-right: -2px;        /* mirrors .logo-icon-wrapper margin-right: -4px */
+  margin-bottom: 32px;
+  animation: rowReveal 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s both;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.al-svg {
-  animation: iconGlow 2.4s ease-in-out 0.5s infinite;
-}
-
-/* ── Text group ───────────────────────────── */
-.al-text-group {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-/* Wordmark — mirrors .logoText exactly */
-.al-wordmark {
-  font-family: var(--heading);
-  font-weight: 800;
-  font-size: 1.92rem;         /* same as header */
-  color: #ffffff;
-  letter-spacing: -0.05em;
-  margin-top: 3px;
-  animation: wordmarkIn 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both;
-}
-
-/* Tagline — mirrors .logoTag exactly */
-.al-tagline {
-  font-size: 0.64rem;         /* same as header */
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.68);
-  letter-spacing: 0.6px;
-  margin-top: 2px;
-  white-space: nowrap;
-  animation: taglineIn 0.5s ease 0.55s both;
+.al-logo-image {
+  width: auto;
+  height: auto;
+  max-width: 90vw;      /* on desktop, up to 90% of viewport width */
+  max-height: 70vh;     /* and up to 70% of viewport height */
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.6));
+  transition: all 0.3s ease;
 }
 
 /* ── Progress bar ─────────────────────────── */
@@ -147,4 +104,12 @@
     transparent
   );
   animation: shimmer 0.9s ease-in-out 0.6s infinite;
+}
+
+/* Mobile adjustments: make the logo even more prominent */
+@media (max-width: 768px) {
+  .al-logo-image {
+    max-width: 95vw;
+    max-height: 60vh;
+  }
 }

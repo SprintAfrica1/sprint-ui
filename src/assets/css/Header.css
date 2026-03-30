@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 100px;                      /* Fixed height - no shifting */
+  height: 100px; /* Fixed height - no shifting */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
   display: flex;
@@ -15,7 +15,7 @@
 
 .header.scrolled,
 .header.solid {
-  height: 82px;                       /* Slightly smaller when scrolled/solid */
+  height: 82px; /* Slightly smaller when scrolled/solid */
   background: rgba(0, 31, 63, 0.96);
   backdrop-filter: blur(22px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;                       /* Full height of fixed header */
+  height: 100%; /* Full height of fixed header */
 }
 
 /* ====================== LOGO ====================== */
@@ -42,14 +42,14 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  height: 180px;                       /* Really big & bold */
+  height: 180px; /* Really big & bold */
   flex-shrink: 0;
 }
 
 .logo-image {
   height: 100%;
   width: auto;
-  max-width: 420px;                   /* Very visible & bold */
+  max-width: 420px; /* Very visible & bold */
   object-fit: contain;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
   transition: all 0.35s ease;
@@ -171,31 +171,79 @@
   margin-top: 24px;
 }
 
-.mobileLogin,
+/* Updated mobile CTA styles to match desktop */
+.mobileLogin {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #fff;
+  padding: 12px 0;
+  text-align: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.mobileLogin:hover {
+  border-color: #ffd700;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.07);
+}
+
 .mobileSignup {
-  padding: 15px;
+  font-weight: 700;
+  font-size: 0.94rem;
+  color: #0a1a2f;
+  background: #ffd700;
+  padding: 12px 0;
   text-align: center;
   border-radius: 12px;
-  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -6px rgba(255, 215, 0, 0.45);
+  transition: all 0.3s ease;
 }
 
-/* Responsive */
+.mobileSignup:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px -8px rgba(255, 215, 0, 0.55);
+}
+
+/* ====================== MOBILE ADJUSTMENTS ====================== */
 @media (max-width: 1024px) {
-  .inner { padding: 0 32px; }
-  .nav, .ctas { display: none; }
-  .hamburger { display: block; }
+  .inner {
+    padding: 0 32px;
+  }
+  .nav,
+  .ctas {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
 }
 
+/* Mobile specific: increase header height and logo size */
 @media (max-width: 640px) {
   .header,
   .header.scrolled,
   .header.solid {
-    height: 78px;
+    height: 100px; /* Taller on mobile to accommodate bigger logo */
   }
+
   .logo {
-    height: 68px;
+    height: 128px; /* Slightly smaller than desktop's 180px but still big */
+     margin-left: -28px; /* Optional: shift a bit more left if needed */
   }
+
   .logo-image {
-    max-width: 310px;
+    max-width: 350px; /* Allow logo to be wider */
+    height: auto;
+    max-height: 120px;
+  }
+
+  /* Ensure hamburger stays centered vertically */
+  .hamburger {
+    align-self: center;
   }
 }

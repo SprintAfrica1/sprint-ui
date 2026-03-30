@@ -157,7 +157,7 @@
 
 .srv-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for 4 services */
   gap: 24px;
 }
 
@@ -192,12 +192,11 @@
   animation: lineGrow 0.5s var(--easing) both;
 }
 
+/* Animation delays for 4 cards */
 .srv-card:nth-child(1)::after { animation-delay: 0.35s; }
 .srv-card:nth-child(2)::after { animation-delay: 0.45s; }
 .srv-card:nth-child(3)::after { animation-delay: 0.55s; }
 .srv-card:nth-child(4)::after { animation-delay: 0.65s; }
-.srv-card:nth-child(5)::after { animation-delay: 0.75s; }
-.srv-card:nth-child(6)::after { animation-delay: 0.85s; }
 
 .srv-card-top {
   display: flex;

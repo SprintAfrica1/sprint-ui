@@ -22,20 +22,6 @@ const Services: React.FC = () => {
       detail: 'Custom SLA agreements',
     },
     {
-      icon: '🌙',
-      title: 'Night Rider',
-      tag: 'Night Ops',
-      desc: 'Late-night deliveries handled with the same care and speed. We don\'t sleep when you need us.',
-      detail: 'Available 10PM – 4AM',
-    },
-    {
-      icon: '🛒',
-      title: 'Shop & Deliver',
-      tag: 'New',
-      desc: 'Tell us what to buy and where. Our riders pick up and deliver groceries, meals, and retail items on your behalf.',
-      detail: 'Errands made effortless',
-    },
-    {
       icon: '🔒',
       title: 'Secured Haulage',
       tag: 'Premium',
